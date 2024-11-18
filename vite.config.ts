@@ -7,19 +7,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: {
-        main: resolve(__dirname, 'src/main.tsx'),
-        'my-component': resolve(__dirname, 'src/myComponent.tsx'),
-        'add-post-component': resolve(__dirname, 'src/addPostComponent.tsx'),
-      },
+      entry: resolve(__dirname, 'src/main.tsx'),
+      name: 'MyComponent',
+      fileName: 'my-component',
       formats: ['es'],
-    },
-    rollupOptions: {
-      output: {
-        // Use the entry name to create separate files
-        entryFileNames: '[name].js',
-        dir: 'dist',
-      },
     },
   },
 });
